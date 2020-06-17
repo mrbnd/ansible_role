@@ -1,2 +1,18 @@
 ---
 # tasks file for buildserver
+- name: install packages
+  apt: name={{item}} state=installed
+  with_items:
+    - default-jdk
+    - maven
+    - git
+    - rsync
+
+- name: Git clone
+  git:
+    repo: 'https://github.com/boxfuse/boxfuse-sample-java-war-hello.git'
+    dest: /tmp/boxfuse-sample-java-war-hello
+    clone: yes
+
+- name: Mvn package
+  command: mvn package -f /tmp/boxfuse-sample-java-war-hello

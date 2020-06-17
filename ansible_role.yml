@@ -4,11 +4,11 @@
   become: yes
 
   roles:
-    - build
+    - buildserver
 
 - name: Web server configuration
   hosts: web
   become: yes
 
   roles:
-    - web
+    - webserver
