@@ -1,0 +1,14 @@
+---
+- name: Build server config
+  hosts: build
+  become: yes
+
+  roles:
+    - build
+
+- name: Web server configuration
+  hosts: web
+  become: yes
+
+  roles:
+    - web
