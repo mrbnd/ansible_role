@@ -16,3 +16,9 @@
 
 - name: Mvn package
   command: mvn package -f /tmp/boxfuse-sample-java-war-hello
+
+- name: Config rsycn
+  copy: src=rsyncd.conf dest=/etc/rsyncd.conf mode=0644
+
+  notify:
+  - restart rsync
