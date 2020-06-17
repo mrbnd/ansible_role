@@ -9,8 +9,8 @@
 - name: Synchronization using rsync protocol (pull)
   synchronize:
     mode: pull
-    src: rsync://{{src_folder}}
-    dest: {{dest_folder}}
+    src: rsync://{{ src_folder }}
+    dest: {{ dest_folder }}
   delegate_to: 52.247.109.255 #Адрес сервера web
 
   notify:
