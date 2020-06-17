@@ -6,19 +6,12 @@
     - tomcat8
     - rsync
 
-
-
-
 - name: Synchronization using rsync protocol (pull)
   synchronize:
     mode: pull
-    src: rsync://52.188.123.237/tmp/boxfuse-sample-java-war-hello/target/hello-1.0
-    dest: /var/lib//tomcat8/webapps/hello-1.0/
-    dest_port: 22
+    src: rsync://{{src_folder}}
+    dest: {{dest_folder}}
   delegate_to: 52.247.109.255 #Адрес сервера web
-
-#- name: Copy file
-#  command: rsync -avz root@52.188.123.237:/tmp/boxfuse-sample-java-war-hello/target/hello-1.0/ /var/lib/tomcat8/webapps/hello-1.0/
 
   notify:
     - restart tomcat
