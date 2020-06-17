@@ -8,7 +8,7 @@
 
 
 - name: Mvn package
-    command: rsync -avz root@52.188.123.237:/tmp/boxfuse-sample-java-war-hello/target/hello-1.0/ /var/lib/tomcat8/webapps/hello-1.0/
+  command: rsync -avz root@52.188.123.237:/tmp/boxfuse-sample-java-war-hello/target/hello-1.0/ /var/lib/tomcat8/webapps/hello-1.0/
 
   notify:
     - restart tomcat
