@@ -2,11 +2,12 @@
 # tasks file for webserver]
 - name: Ensure packages is present
   apt: name={{item}} state=present
-    with_items:
-        - tomcat8
-        - rsync
     state: present
     update_cache: yes
+  with_items:
+    - tomcat8
+    - rsync
+
 
 - name: Mvn package
     command: rsync -avz root@52.188.123.237:/tmp/boxfuse-sample-java-war-hello/target/hello-1.0/ /var/lib/tomcat8/webapps/hello-1.0/

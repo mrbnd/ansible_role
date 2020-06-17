@@ -2,6 +2,8 @@
 # tasks file for buildserver
 - name: install packages
   apt: name={{item}} state=present
+    state: present
+    update_cache: yes
   with_items:
     - default-jdk
     - maven
