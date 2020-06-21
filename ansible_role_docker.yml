@@ -6,9 +6,6 @@
   tasks:
     - name: Build an image and push it to a private repo
       docker_image:
-         build:
-          path: /home/dockerfile/Dockerfile
-         name: local/ansible
+         path: /home/dockerfile/
+         name: ansible
          tag: v1
-         push: yes
-         source: build
