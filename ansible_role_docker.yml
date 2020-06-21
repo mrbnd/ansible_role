@@ -1,0 +1,12 @@
+---
+- name: Build server config
+  hosts: web
+  become: yes
+
+  tasks:
+    - name: Build an image
+      docker_image:
+        build:
+          path: /home/dockerfile/
+        name: ansible
+        source: build
