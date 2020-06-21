@@ -4,6 +4,13 @@
   become: yes
 
   tasks:
+    - name: Ensure python-pip is present
+      apt: name=python-pip state=present update_cache=yes
+
+    - name: Install docker-py
+      pip:
+        name: docker-py
+
     - name: Build an image and push it to a private repo
       docker_image:
          path: /home/dockerfile/
