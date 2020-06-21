@@ -4,9 +4,11 @@
   become: yes
 
   tasks:
-    - name: Build an image
+    - name: Build an image and push it to a private repo
       docker_image:
         build:
           path: /home/dockerfile/
         name: ansible
+        tag: v1
+        push: yes
         source: build
